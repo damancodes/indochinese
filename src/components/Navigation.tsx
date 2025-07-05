@@ -15,43 +15,45 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-orange-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">龍</span>
+              <span className="text-white font-bold text-sm p-2">BYD</span>
             </div>
-            <span className="text-xl font-bold text-gray-800">Dragon Palace</span>
+
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className={`transition-colors duration-200 ${
-                isActive('/') 
-                  ? 'text-red-600 font-semibold' 
-                  : 'text-gray-700 hover:text-red-600'
-              }`}
+              className={`transition-colors duration-200 ${isActive('/')
+                ? 'text-red-600 font-semibold'
+                : 'text-gray-700 hover:text-red-600'
+                }`}
             >
               Home
             </Link>
             <Link
               to="/menu"
-              className={`transition-colors duration-200 ${
-                isActive('/menu') 
-                  ? 'text-red-600 font-semibold' 
-                  : 'text-gray-700 hover:text-red-600'
-              }`}
+              className={`transition-colors duration-200 ${isActive('/menu')
+                ? 'text-red-600 font-semibold'
+                : 'text-gray-700 hover:text-red-600'
+                }`}
             >
               Menu
             </Link>
-            
+
             {/* Contact Info */}
             <div className="flex items-center space-x-4 text-sm text-gray-600">
               <div className="flex items-center space-x-1">
                 <Phone className="w-4 h-4" />
-                <span>(555) 123-4567</span>
+                <a href="tel:+447405421830" className="hover:text-red-600 transition-colors">
+                  +44-7405421830
+                </a>
               </div>
               <div className="flex items-center space-x-1">
                 <MapPin className="w-4 h-4" />
-                <span>123 Asia Street</span>
+                <span>209 Shenley Road,
+                  Borehamwood,  WD6 1AT,
+                  United Kingdom</span>
               </div>
             </div>
           </div>
@@ -74,33 +76,33 @@ const Navigation = () => {
               <Link
                 to="/"
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md transition-colors duration-200 ${
-                  isActive('/') 
-                    ? 'text-red-600 bg-red-50 font-semibold' 
-                    : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
-                }`}
+                className={`block px-3 py-2 rounded-md transition-colors duration-200 ${isActive('/')
+                  ? 'text-red-600 bg-red-50 font-semibold'
+                  : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
+                  }`}
               >
                 Home
               </Link>
               <Link
                 to="/menu"
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md transition-colors duration-200 ${
-                  isActive('/menu') 
-                    ? 'text-red-600 bg-red-50 font-semibold' 
-                    : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
-                }`}
+                className={`block px-3 py-2 rounded-md transition-colors duration-200 ${isActive('/menu')
+                  ? 'text-red-600 bg-red-50 font-semibold'
+                  : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
+                  }`}
               >
                 Menu
               </Link>
               <div className="px-3 py-2 text-sm text-gray-600 space-y-1">
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
-                  <span>(555) 123-4567</span>
+                  <span>+44-7405421830</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4" />
-                  <span>123 Asia Street, Chinatown</span>
+                  <span>209 Shenley Road,
+                    Borehamwood,  WD6 1AT,
+                    United Kingdom</span>
                 </div>
               </div>
             </div>

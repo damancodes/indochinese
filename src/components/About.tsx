@@ -1,29 +1,29 @@
 import React from 'react';
 import { Award, Clock, Heart, Users } from 'lucide-react';
-
+const features = [
+  {
+    icon: Award,
+    title: "Award Winning",
+    description: "Recognized for excellence in authentic Indochinese cuisine"
+  },
+  {
+    icon: Clock,
+    title: "25 Years Legacy",
+    description: "Serving the community with traditional recipes since 1999"
+  },
+  {
+    icon: Heart,
+    title: "Made with Love",
+    description: "Every dish prepared with passion and attention to detail"
+  },
+  {
+    icon: Users,
+    title: "Family Owned",
+    description: "Three generations of culinary expertise in one kitchen"
+  }
+];
 const About = () => {
-  const features = [
-    {
-      icon: Award,
-      title: "Award Winning",
-      description: "Recognized for excellence in authentic Indochinese cuisine"
-    },
-    {
-      icon: Clock,
-      title: "25 Years Legacy",
-      description: "Serving the community with traditional recipes since 1999"
-    },
-    {
-      icon: Heart,
-      title: "Made with Love",
-      description: "Every dish prepared with passion and attention to detail"
-    },
-    {
-      icon: Users,
-      title: "Family Owned",
-      description: "Three generations of culinary expertise in one kitchen"
-    }
-  ];
+  const features: { icon: any, title: string, description: string }[] = []
 
   return (
     <section className="py-16 lg:py-24 bg-white">
@@ -48,15 +48,15 @@ const About = () => {
               A Journey Through
               <span className="block text-red-600">Indochinese Heritage</span>
             </h2>
-            
+
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              Dragon Palace has been the cornerstone of authentic Indochinese dining for over two decades. 
-              Our master chefs bring together the bold flavors of Chinese cuisine with the aromatic spices 
+              BYD Palace has been the cornerstone of authentic Indochinese dining for over two decades.
+              Our master chefs bring together the bold flavors of Chinese cuisine with the aromatic spices
               of Southeast Asia, creating a unique culinary experience that tells the story of cultural fusion.
             </p>
-            
+
             <p className="text-gray-600 mb-10 leading-relaxed">
-              From our signature Hakka noodles to the perfectly balanced Manchurian dishes, every recipe 
+              From our signature Hakka noodles to the perfectly balanced Manchurian dishes, every recipe
               has been perfected through generations of family tradition and culinary innovation.
             </p>
 

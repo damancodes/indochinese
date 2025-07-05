@@ -65,9 +65,9 @@ const Highlights = () => {
                   <span className="text-xl font-bold text-red-600">{dish.price}</span>
                 </div>
                 <p className="text-gray-600 mb-4 leading-relaxed">{dish.description}</p>
-                <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+                {/* <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
                   Add to Order
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
