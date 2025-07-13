@@ -20,9 +20,19 @@ import chickenNoodle from '../../public/images/chickennoodle.png'
 
 
 import vegNoodle from '../../public/images/vegnoodle.png'
+import cauliflower65 from '../../public/images/cauliflower65.png'
+import chilliPaneer from '../../public/images/chillipaneer.png'
+import chlliGarlicMogo from '../../public/images/chilligarlicmogo.png'
+import springroll from '../../public/images/springroll.png'
+
+import crispyChicken from '../../public/images/crispyChicken.png'
+import chickenSpringRoll from '../../public/images/chickenspringroll.png'
+import chickenTender from '../../public/images/chickentender.png'
+import chickenfriedrice from '../../public/images/chickenfriedrice.png'
+import prawnNoodles from '../../public/images/prawnnoodles.png'
 
 
-type CategoryId = "all" | "vegstarter" | "nonvegstarter" | "noodles" | "rice" | "soup" | "chicken";
+type CategoryId = "all" | "vegstarter" | "nonvegstarter" | "noodles" | "rice" | "soup";
 
 type Category = {
   id: CategoryId
@@ -58,9 +68,9 @@ const menuItems: MenuItem[] = [
     id: 1,
     name: "Chili garlic mogo",
     description: "Crispy cassava tossed in a fiery chili garlic sauce for a bold, flavorful kick.",
-    price: 4.90,
+    price: 5.50,
     category: "vegstarter",
-    image: "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg",
+    image: chlliGarlicMogo,
     spicy: true,
     popular: true
   },
@@ -68,19 +78,19 @@ const menuItems: MenuItem[] = [
     id: 2,
     name: "Veg spring roll",
     description: "Crispy golden rolls filled with seasoned vegetables, served with a tangy dip.",
-    price: 4.50,
+    price: 4.90,
     category: "vegstarter",
-    image: "https://images.unsplash.com/photo-1695712641569-05eee7b37b6d?w=400&auto=format&fit=crop",
+    image: springroll,
     spicy: true,
     popular: false
   },
   {
     id: 3,
-    name: "Cauliflower",
+    name: "Gobi 65",
     description: "Battered cauliflower florets tossed in Indo-Chinese sauce.",
     price: 4.90,
     category: "vegstarter",
-    image: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=400&auto=format&fit=crop",
+    image: cauliflower65,
     spicy: true,
     popular: false
   },
@@ -90,19 +100,29 @@ const menuItems: MenuItem[] = [
     description: "Paneer cubes in spicy chili sauce with onions and peppers.",
     price: 4.90,
     category: "vegstarter",
-    image: "https://images.pexels.com/photos/13793240/pexels-photo-13793240.jpeg",
+    image: chilliPaneer,
     spicy: true,
     popular: true
   },
 
   // Non-Veg Starters
+  // {
+  //   id: 5,
+  //   name: "Fried Chicken",
+  //   description: "Crispy chicken with flavorful seasoning.",
+  //   price: 4.90,
+  //   category: "nonvegstarter",
+  //   image: friedChicken,
+  //   spicy: false,
+  //   popular: true
+  // },
   {
     id: 5,
-    name: "Fried Chicken",
+    name: "Chicken Tender",
     description: "Crispy chicken with flavorful seasoning.",
     price: 4.90,
     category: "nonvegstarter",
-    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=2340&auto=format&fit=crop",
+    image: chickenTender,
     spicy: false,
     popular: true
   },
@@ -112,7 +132,7 @@ const menuItems: MenuItem[] = [
     description: "Fried chicken tossed in spicy garlic sauce.",
     price: 4.90,
     category: "nonvegstarter",
-    image: "https://images.unsplash.com/photo-1562967914-608f82629710?w=900&auto=format&fit=crop&q=60",
+    image: crispyChicken,
     spicy: true,
     popular: false
   },
@@ -122,7 +142,7 @@ const menuItems: MenuItem[] = [
     description: "Golden spring rolls filled with chicken and herbs.",
     price: 4.50,
     category: "nonvegstarter",
-    image: "https://images.unsplash.com/photo-1623689043725-743d4aa0d91a?q=80&w=1286&auto=format&fit=crop",
+    image: chickenSpringRoll,
     spicy: true,
     popular: false
   },
@@ -162,7 +182,7 @@ const menuItems: MenuItem[] = [
     id: 11,
     name: "Veg Manchow Soup",
     description: "Spicy hot-and-sour veg soup with crispy noodles.",
-    price: 3.90,
+    price: 7.50,
     category: "soup",
     image: vegmonchowsoup,
     spicy: true,
@@ -172,7 +192,7 @@ const menuItems: MenuItem[] = [
     id: 12,
     name: "Sweet Corn Soup",
     description: "Creamy corn soup with veggies or chicken.",
-    price: 3.50,
+    price: 6.50,
     category: "soup",
     image: sweetcornsoup,
     spicy: false,
@@ -182,7 +202,7 @@ const menuItems: MenuItem[] = [
     id: 13,
     name: "Hot & Sour Soup",
     description: "Tangy, spicy soup with fresh herbs and mixed vegetables.",
-    price: 3.75,
+    price: 7.50,
     category: "soup",
     image: hotandsour,
     spicy: true,
@@ -192,7 +212,7 @@ const menuItems: MenuItem[] = [
     id: 14,
     name: "Chicken Clear Soup",
     description: "Light clear chicken broth with herbs and spring onions.",
-    price: 4.25,
+    price: 7.50,
     category: "soup",
     image: chickenclearsoup,
     spicy: false,
@@ -204,7 +224,7 @@ const menuItems: MenuItem[] = [
     id: 15,
     name: "Veg Fried Rice",
     description: "Stir-fried rice with colorful vegetables and soy sauce.",
-    price: 9.99,
+    price: 8.99,
     category: "rice",
     image: vegfriedrice,
     spicy: false,
@@ -214,9 +234,19 @@ const menuItems: MenuItem[] = [
     id: 16,
     name: "Egg Fried Rice",
     description: "Basmati rice stir-fried with eggs and green onions.",
-    price: 9.99,
+    price: 8.99,
     category: "rice",
     image: eggfriedrice,
+    spicy: false,
+    popular: true
+  },
+  {
+    id: 34,
+    name: "Chicken Fried Rice",
+    description: "Basmati rice stir-fried with chicken and green onions.",
+    price: 9.99,
+    category: "rice",
+    image: chickenfriedrice,
     spicy: false,
     popular: true
   },
@@ -271,20 +301,31 @@ const menuItems: MenuItem[] = [
     image: chickenNoodle,
     spicy: true,
     popular: true
+  },
+
+  {
+    id: 22,
+    name: "Prawn Noodles",
+    description: "Savory noodles tossed with succulent prawns, aromatic spices, and a rich, flavorful broth.",
+    price: 9.99,
+    category: "noodles",
+    image: prawnNoodles,
+    spicy: false,
+    popular: true
   }
 ];
-
 
 
 menuItems.forEach(item => {
 
   const catIndex = categories.findIndex((c) => c.id == item.category)
+  console.log("catindex ", catIndex)
 
   categories[catIndex].count++;
 
 })
-categories[0].count = menuItems.length;
 
+categories[0].count = menuItems.length;
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState('all');
