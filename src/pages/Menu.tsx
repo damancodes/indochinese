@@ -265,7 +265,7 @@ const menuItems: MenuItem[] = [
     name: "Paneer Crispy (Main)",
     description: "Main course-style crispy paneer served with sauces.",
     price: 10.50,
-    category: "rice",
+    category: "vegstarter",
     image: paneercrispy,
     spicy: true,
     popular: false
