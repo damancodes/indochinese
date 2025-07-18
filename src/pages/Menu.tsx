@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, ArrowRight, Utensils } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import chickenlolipop from '../../public/images/chickenlolipop.jpeg'
 import prawnpuri from '../../public/images/prawnpuri.png'
@@ -350,6 +351,27 @@ const Menu = () => {
             Discover our authentic Indochinese dishes, each prepared with traditional recipes
             and the finest ingredients.
           </p>
+        </div>
+
+        {/* Indo Catering Sub Menu */}
+        <div className="mb-12">
+          <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl p-8 text-white text-center shadow-xl">
+            <div className="flex justify-center mb-4">
+              <Utensils className="w-12 h-12" />
+            </div>
+            <h2 className="text-3xl font-bold mb-4">Indo Catering</h2>
+            <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
+              Explore our authentic North Indian catering menu featuring traditional dishes like
+              Bathur Chole, Dal Makhni, and Kadhai Paneer - perfect for events and celebrations.
+            </p>
+            <Link
+              to="/indo-catering"
+              className="inline-flex items-center space-x-2 bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg"
+            >
+              <span>View Indo Catering Menu</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
 
         {/* Search Bar */}
