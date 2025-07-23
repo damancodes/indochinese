@@ -1,272 +1,341 @@
 import React, { useState } from 'react';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, ArrowRight, Utensils } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+import chickenlolipop from '../../public/images/chickenlolipop.jpeg'
+import prawnpuri from '../../public/images/prawnpuri.png'
+import chillichicken from '../../public/images/chilichicken.png'
+import vegmonchowsoup from '../../public/images/vegmonchowsoup.png'
+import sweetcornsoup from '../../public/images/sweetcornsoup.png'
+import hotandsour from '../../public/images/hot&sour.png'
+import chickenclearsoup from '../../public/images/chickenclearsoup.png'
+
+import vegfriedrice from '../../public/images/vegfriedrice.png'
+import eggfriedrice from '../../public/images/eggfriedrice.png';
+import chickenManch from '../../public/images/chickenManchurian.png'
+
+import paneercrispy from '../../public/images/paneercrispy.png'
+import vegManchGravy from '../../public/images/vegManchuriangravy.png'
+
+import chickenNoodle from '../../public/images/chickennoodle.png'
+
+
+import vegNoodle from '../../public/images/vegnoodle.png'
+import cauliflower65 from '../../public/images/cauliflower65.png'
+import chilliPaneer from '../../public/images/chillipaneer.png'
+import chlliGarlicMogo from '../../public/images/chilligarlicmogo.png'
+import springroll from '../../public/images/springroll.png'
+
+import crispyChicken from '../../public/images/crispyChicken.png'
+import chickenSpringRoll from '../../public/images/chickenspringroll.png'
+import chickenTender from '../../public/images/chickentender.png'
+import chickenfriedrice from '../../public/images/chickenfriedrice.png'
+import prawnNoodles from '../../public/images/prawnnoodles.png'
+
+
+type CategoryId = "all" | "vegstarter" | "nonvegstarter" | "noodles" | "rice" | "soup";
+
+type Category = {
+  id: CategoryId
+  name: string,
+  count: number
+}
+
+type MenuItem = {
+  id: number,
+  name: string,
+  description: string,
+  price: number,
+  category: CategoryId,
+
+  image: string,
+  spicy: boolean,
+  popular: boolean
+}
+
+const categories: Category[] = [
+  { id: "all", name: "All Items", count: 0 },
+  { id: "vegstarter", name: "Veg Starters", count: 0 },
+  { id: "nonvegstarter", name: "Non-Veg Starters", count: 0 },
+  { id: "soup", name: "Soups", count: 0 },
+  { id: "noodles", name: "Noodles", count: 0 },
+  { id: "rice", name: "Rice & Mains", count: 0 }
+];
+
+
+const menuItems: MenuItem[] = [
+  // Veg Starters
+  {
+    id: 1,
+    name: "Chili garlic mogo",
+    description: "Crispy cassava tossed in a fiery chili garlic sauce for a bold, flavorful kick.",
+    price: 5.50,
+    category: "vegstarter",
+    image: chlliGarlicMogo,
+    spicy: true,
+    popular: true
+  },
+  {
+    id: 2,
+    name: "Veg spring roll",
+    description: "Crispy golden rolls filled with seasoned vegetables, served with a tangy dip.",
+    price: 4.90,
+    category: "vegstarter",
+    image: springroll,
+    spicy: true,
+    popular: false
+  },
+  {
+    id: 3,
+    name: "Gobi 65",
+    description: "Battered cauliflower florets tossed in Indo-Chinese sauce.",
+    price: 4.90,
+    category: "vegstarter",
+    image: cauliflower65,
+    spicy: true,
+    popular: false
+  },
+  {
+    id: 4,
+    name: "Chilli Paneer",
+    description: "Paneer cubes in spicy chili sauce with onions and peppers.",
+    price: 4.90,
+    category: "vegstarter",
+    image: chilliPaneer,
+    spicy: true,
+    popular: true
+  },
+
+  // Non-Veg Starters
+  // {
+  //   id: 5,
+  //   name: "Fried Chicken",
+  //   description: "Crispy chicken with flavorful seasoning.",
+  //   price: 4.90,
+  //   category: "nonvegstarter",
+  //   image: friedChicken,
+  //   spicy: false,
+  //   popular: true
+  // },
+  {
+    id: 5,
+    name: "Chicken Tender",
+    description: "Crispy chicken with flavorful seasoning.",
+    price: 4.90,
+    category: "nonvegstarter",
+    image: chickenTender,
+    spicy: false,
+    popular: true
+  },
+  {
+    id: 6,
+    name: "Chicken Crispy",
+    description: "Fried chicken tossed in spicy garlic sauce.",
+    price: 4.90,
+    category: "nonvegstarter",
+    image: crispyChicken,
+    spicy: true,
+    popular: false
+  },
+  {
+    id: 7,
+    name: "Chicken Spring Roll",
+    description: "Golden spring rolls filled with chicken and herbs.",
+    price: 4.50,
+    category: "nonvegstarter",
+    image: chickenSpringRoll,
+    spicy: true,
+    popular: false
+  },
+  {
+    id: 8,
+    name: "Chicken Lollipop",
+    description: "Spicy deep-fried chicken lollipops.",
+    price: 4.50,
+    category: "nonvegstarter",
+    image: chickenlolipop,
+    spicy: true,
+    popular: true
+  },
+  {
+    id: 9,
+    name: "Prawn Puri",
+    description: "Mini puris topped with spicy prawns and chutney.",
+    price: 5.50,
+    category: "nonvegstarter",
+    image: prawnpuri,
+    spicy: false,
+    popular: false
+  },
+  {
+    id: 10,
+    name: "Chilli Chicken",
+    description: "Tender chicken cubes in spicy Indo-Chinese sauce.",
+    price: 5.50,
+    category: "nonvegstarter",
+    image: chillichicken,
+    spicy: true,
+    popular: true
+  },
+
+  // Soups
+  {
+    id: 11,
+    name: "Veg Manchow Soup",
+    description: "Spicy hot-and-sour veg soup with crispy noodles.",
+    price: 7.50,
+    category: "soup",
+    image: vegmonchowsoup,
+    spicy: true,
+    popular: true
+  },
+  {
+    id: 12,
+    name: "Sweet Corn Soup",
+    description: "Creamy corn soup with veggies or chicken.",
+    price: 6.50,
+    category: "soup",
+    image: sweetcornsoup,
+    spicy: false,
+    popular: false
+  },
+  {
+    id: 13,
+    name: "Hot & Sour Soup",
+    description: "Tangy, spicy soup with fresh herbs and mixed vegetables.",
+    price: 7.50,
+    category: "soup",
+    image: hotandsour,
+    spicy: true,
+    popular: false
+  },
+  {
+    id: 14,
+    name: "Chicken Clear Soup",
+    description: "Light clear chicken broth with herbs and spring onions.",
+    price: 7.50,
+    category: "soup",
+    image: chickenclearsoup,
+    spicy: false,
+    popular: false
+  },
+
+  // Rice & Mains
+  {
+    id: 15,
+    name: "Veg Fried Rice",
+    description: "Stir-fried rice with colorful vegetables and soy sauce.",
+    price: 8.99,
+    category: "rice",
+    image: vegfriedrice,
+    spicy: false,
+    popular: false
+  },
+  {
+    id: 16,
+    name: "Egg Fried Rice",
+    description: "Basmati rice stir-fried with eggs and green onions.",
+    price: 8.99,
+    category: "rice",
+    image: eggfriedrice,
+    spicy: false,
+    popular: true
+  },
+  {
+    id: 34,
+    name: "Chicken Fried Rice",
+    description: "Basmati rice stir-fried with chicken and green onions.",
+    price: 9.99,
+    category: "rice",
+    image: chickenfriedrice,
+    spicy: false,
+    popular: true
+  },
+  {
+    id: 17,
+    name: "Chicken Manchurian",
+    description: "Chicken tossed in rich Manchurian sauce.",
+    price: 10.50,
+    category: "rice",
+    image: chickenManch,
+    spicy: true,
+    popular: false
+  },
+  {
+    id: 18,
+    name: "Paneer Crispy (Main)",
+    description: "Main course-style crispy paneer served with sauces.",
+    price: 10.50,
+    category: "vegstarter",
+    image: paneercrispy,
+    spicy: true,
+    popular: false
+  },
+  {
+    id: 19,
+    name: "Veg Manchurian Gravy",
+    description: "Fried veg balls in Indo-Chinese Manchurian sauce.",
+    price: 10.50,
+    category: "rice",
+    image: vegManchGravy,
+    spicy: true,
+    popular: false
+  },
+
+  // Noodles
+  {
+    id: 20,
+    name: "Veg Noodles",
+    description: "Stir-fried Hakka noodles with vegetables.",
+    price: 9.99,
+    category: "noodles",
+    image: vegNoodle,
+    spicy: false,
+    popular: true
+  },
+  {
+    id: 21,
+    name: "Chicken Noodles",
+    description: "Hakka noodles stir-fried with chicken and soy.",
+    price: 9.99,
+    category: "noodles",
+    image: chickenNoodle,
+    spicy: true,
+    popular: true
+  },
+
+  {
+    id: 22,
+    name: "Prawn Noodles",
+    description: "Savory noodles tossed with succulent prawns, aromatic spices, and a rich, flavorful broth.",
+    price: 9.99,
+    category: "noodles",
+    image: prawnNoodles,
+    spicy: false,
+    popular: true
+  }
+];
+
+
+menuItems.forEach(item => {
+
+  const catIndex = categories.findIndex((c) => c.id == item.category)
+  console.log("catindex ", catIndex)
+
+  categories[catIndex].count++;
+
+})
+
+categories[0].count = menuItems.length;
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categories = [
-    { id: 'all', name: 'All Items', count: 24 },
-    { id: 'appetizers', name: 'Appetizers', count: 6 },
-    { id: 'noodles', name: 'Noodles', count: 8 },
-    { id: 'rice', name: 'Rice', count: 5 },
-    { id: 'chicken', name: 'Chicken', count: 5 }
-  ];
-
-  const menuItems = [
-    // Appetizers
-    {
-      id: 1,
-      name: "Chicken Spring Rolls",
-      description: "Crispy golden rolls filled with seasoned chicken and fresh vegetables",
-      price: 8.99,
-      category: "appetizers",
-      image: "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: true
-    },
-    {
-      id: 2,
-      name: "Honey Chili Potatoes",
-      description: "Crispy potato cubes tossed in sweet and spicy honey chili sauce",
-      price: 7.99,
-      category: "appetizers",
-      image: "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: false
-    },
-    {
-      id: 3,
-      name: "Chicken Lollipops",
-      description: "Tender chicken drummettes marinated in aromatic spices and deep fried",
-      price: 10.99,
-      category: "appetizers",
-      image: "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: true
-    },
-    {
-      id: 4,
-      name: "Paneer Chili",
-      description: "Indo-Chinese style paneer cubes with bell peppers in spicy sauce",
-      price: 9.99,
-      category: "appetizers",
-      image: "https://images.pexels.com/photos/1252814/pexels-photo-1252814.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: false
-    },
-    {
-      id: 5,
-      name: "Dragon Chicken",
-      description: "Succulent chicken pieces in dragon sauce with onions and peppers",
-      price: 11.99,
-      category: "appetizers",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: true
-    },
-    {
-      id: 6,
-      name: "Veg Manchurian",
-      description: "Mixed vegetable balls in tangy Manchurian sauce",
-      price: 8.99,
-      category: "appetizers",
-      image: "https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: false
-    },
-
-    // Noodles
-    {
-      id: 7,
-      name: "Hakka Noodles",
-      description: "Classic stir-fried noodles with fresh vegetables and soy sauce",
-      price: 12.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: true
-    },
-    {
-      id: 8,
-      name: "Schezwan Noodles",
-      description: "Spicy noodles with Schezwan sauce, vegetables, and choice of protein",
-      price: 14.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/1853134/pexels-photo-1853134.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: true
-    },
-    {
-      id: 9,
-      name: "Singapore Rice Noodles",
-      description: "Thin rice noodles with curry flavor, shrimp, and char siu",
-      price: 16.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: false
-    },
-    {
-      id: 10,
-      name: "Chicken Chow Mein",
-      description: "Crispy noodles topped with chicken and vegetables in savory sauce",
-      price: 15.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/2456435/pexels-photo-2456435.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: true
-    },
-    {
-      id: 11,
-      name: "Dan Dan Noodles",
-      description: "Szechuan noodles with minced pork in spicy sesame sauce",
-      price: 13.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: false
-    },
-    {
-      id: 12,
-      name: "Thai Basil Noodles",
-      description: "Rice noodles with Thai basil, chili, and choice of meat",
-      price: 14.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: false
-    },
-    {
-      id: 13,
-      name: "Black Bean Noodles",
-      description: "Egg noodles with black bean sauce, vegetables, and tender beef",
-      price: 15.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/1907229/pexels-photo-1907229.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: false
-    },
-    {
-      id: 14,
-      name: "Dragon Noodles",
-      description: "House special noodles with mixed seafood in dragon sauce",
-      price: 18.99,
-      category: "noodles",
-      image: "https://images.pexels.com/photos/2233348/pexels-photo-2233348.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: true
-    },
-
-    // Rice
-    {
-      id: 15,
-      name: "Szechuan Fried Rice",
-      description: "Spicy fried rice with Szechuan peppercorns and mixed vegetables",
-      price: 11.99,
-      category: "rice",
-      image: "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: true
-    },
-    {
-      id: 16,
-      name: "Yang Chow Fried Rice",
-      description: "Classic fried rice with shrimp, char siu, and scrambled eggs",
-      price: 13.99,
-      category: "rice",
-      image: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: true
-    },
-    {
-      id: 17,
-      name: "Chicken Fried Rice",
-      description: "Aromatic fried rice with tender chicken pieces and vegetables",
-      price: 12.99,
-      category: "rice",
-      image: "https://images.pexels.com/photos/1907227/pexels-photo-1907227.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: false
-    },
-    {
-      id: 18,
-      name: "Pineapple Fried Rice",
-      description: "Thai-style fried rice with pineapple, cashews, and curry powder",
-      price: 14.99,
-      category: "rice",
-      image: "https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: false
-    },
-    {
-      id: 19,
-      name: "Dragon Rice",
-      description: "House special rice with mixed seafood and dragon sauce",
-      price: 16.99,
-      category: "rice",
-      image: "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: true
-    },
-
-    // Chicken
-    {
-      id: 20,
-      name: "Chicken Manchurian",
-      description: "Crispy chicken balls in tangy Indo-Chinese Manchurian sauce",
-      price: 16.99,
-      category: "chicken",
-      image: "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: true
-    },
-    {
-      id: 21,
-      name: "General Tso's Chicken",
-      description: "Sweet and spicy battered chicken in General Tso's sauce",
-      price: 17.99,
-      category: "chicken",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: true
-    },
-    {
-      id: 22,
-      name: "Honey Garlic Chicken",
-      description: "Tender chicken glazed with honey garlic sauce",
-      price: 15.99,
-      category: "chicken",
-      image: "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: false
-    },
-    {
-      id: 23,
-      name: "Szechuan Chicken",
-      description: "Spicy chicken with Szechuan peppercorns and dried chilies",
-      price: 16.99,
-      category: "chicken",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: true,
-      popular: false
-    },
-    {
-      id: 24,
-      name: "Orange Chicken",
-      description: "Crispy chicken with fresh orange zest in sweet citrus sauce",
-      price: 16.99,
-      category: "chicken",
-      image: "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      spicy: false,
-      popular: true
-    }
-  ];
-
   const filteredItems = menuItems.filter(item => {
     const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
     const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         item.description.toLowerCase().includes(searchTerm.toLowerCase());
+      item.description.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -279,9 +348,30 @@ const Menu = () => {
             Our Menu
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Discover our authentic Indochinese dishes, each prepared with traditional recipes 
+            Discover our authentic Indochinese dishes, each prepared with traditional recipes
             and the finest ingredients.
           </p>
+        </div>
+
+        {/* Indo Catering Sub Menu */}
+        <div className="mb-12">
+          <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl p-8 text-white text-center shadow-xl">
+            <div className="flex justify-center mb-4">
+              <Utensils className="w-12 h-12" />
+            </div>
+            <h2 className="text-3xl font-bold mb-4">Indo Catering</h2>
+            <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
+              Explore our authentic North Indian catering menu featuring traditional dishes like
+              Bathur Chole, Dal Makhni, and Kadhai Paneer - perfect for events and celebrations.
+            </p>
+            <Link
+              to="/indo-catering"
+              className="inline-flex items-center space-x-2 bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg"
+            >
+              <span>View Indo Catering Menu</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
 
         {/* Search Bar */}
@@ -305,18 +395,16 @@ const Menu = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-200 flex items-center space-x-2 ${
-                  activeCategory === category.id
-                    ? 'bg-red-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-red-50 hover:text-red-600'
-                }`}
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-200 flex items-center space-x-2 ${activeCategory === category.id
+                  ? 'bg-red-600 text-white shadow-lg'
+                  : 'bg-white text-gray-700 hover:bg-red-50 hover:text-red-600'
+                  }`}
               >
                 <span>{category.name}</span>
-                <span className={`text-xs px-2 py-1 rounded-full ${
-                  activeCategory === category.id
-                    ? 'bg-red-500 text-white'
-                    : 'bg-gray-200 text-gray-600'
-                }`}>
+                <span className={`text-xs px-2 py-1 rounded-full ${activeCategory === category.id
+                  ? 'bg-red-500 text-white'
+                  : 'bg-gray-200 text-gray-600'
+                  }`}>
                   {category.count}
                 </span>
               </button>
@@ -350,16 +438,16 @@ const Menu = () => {
                   )}
                 </div>
                 <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1">
-                  <span className="text-lg font-bold text-red-600">${item.price}</span>
+                  <span className="text-lg font-bold text-red-600">£{item.price}</span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">{item.description}</p>
-                <button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                {/* <button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
                   Add to Order
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

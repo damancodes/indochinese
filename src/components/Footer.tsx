@@ -1,5 +1,5 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter } from 'lucide-react';
+
+import { MapPin, Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -12,10 +12,10 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-orange-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">龍</span>
               </div>
-              <span className="text-xl font-bold">Dragon Palace</span>
+              <span className="text-xl font-bold">BYD Palace</span>
             </div>
             <p className="text-gray-400 mb-4 leading-relaxed">
-              Serving authentic Indochinese cuisine for over 25 years. Experience the perfect 
+              Serving authentic Indochinese cuisine for over 25 years. Experience the perfect
               fusion of flavors in every dish.
             </p>
             <div className="flex space-x-4">
@@ -37,15 +37,17 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-red-500 flex-shrink-0" />
-                <span className="text-gray-400">123 Asia Street, Chinatown, NY 10013</span>
+                <span className="text-gray-400">   209 Shenley Road,
+                  Borehamwood,  WD6 1AT,
+                  United Kingdom</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-red-500 flex-shrink-0" />
-                <span className="text-gray-400">(555) 123-4567</span>
+                <span className="text-gray-400">+44-7405421830</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
-                <span className="text-gray-400">info@dragonpalace.com</span>
+                <span className="text-gray-400">n.sharma77@yahoo.com</span>
               </div>
             </div>
           </div>
@@ -55,17 +57,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Hours</h3>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-gray-400">Mon - Thu</span>
-                <span className="text-gray-300">11 AM - 10 PM</span>
+                <span className="text-gray-400">Mon - Sunday</span>
+                <span className="text-gray-300">5 PM - 11 PM</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-gray-400">Fri - Sat</span>
-                <span className="text-gray-300">11 AM - 11 PM</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-400">Sunday</span>
-                <span className="text-gray-300">12 PM - 9 PM</span>
-              </div>
+
             </div>
           </div>
 
@@ -94,7 +89,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Dragon Palace Restaurant. All rights reserved. Made with ❤️ for food lovers.
+            © 2025 BYD Palace Restaurant. All rights reserved. Made with ❤️ for food lovers.
           </p>
         </div>
       </div>

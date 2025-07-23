@@ -1,11 +1,9 @@
-import React from 'react';
+
 import { MapPin, Phone, Clock, Mail } from 'lucide-react';
 
 const Contact = () => {
   const hours = [
-    { day: "Monday - Thursday", time: "11:00 AM - 10:00 PM" },
-    { day: "Friday - Saturday", time: "11:00 AM - 11:00 PM" },
-    { day: "Sunday", time: "12:00 PM - 9:00 PM" }
+    { day: "Monday - Sunday ", time: "05:00 Pm - 11:00 PM" },
   ];
 
   return (
@@ -13,10 +11,10 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Visit Dragon Palace
+            Visit BYD Palace
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Experience authentic Indochinese cuisine in our warm and welcoming atmosphere. 
+            Experience authentic Indochinese cuisine in our warm and welcoming atmosphere.
             We look forward to serving you!
           </p>
         </div>
@@ -31,9 +29,9 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Location</h3>
                 <p className="text-gray-600">
-                  123 Asia Street<br />
-                  Chinatown, NY 10013<br />
-                  United States
+                  209 Shenley Road<br />
+                  Borehamwood,  WD6 1AT<br />
+                  United Kingdom
                 </p>
               </div>
             </div>
@@ -45,8 +43,8 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
                 <p className="text-gray-600">
-                  <a href="tel:+15551234567" className="hover:text-red-600 transition-colors">
-                    (555) 123-4567
+                  <a href="tel:+447405421830" className="hover:text-red-600 transition-colors">
+                    +44-7405421830
                   </a>
                 </p>
               </div>
@@ -59,8 +57,8 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
                 <p className="text-gray-600">
-                  <a href="mailto:info@dragonpalace.com" className="hover:text-red-600 transition-colors">
-                    info@dragonpalace.com
+                  <a href="mailto:n.sharma77@yahoo.com" className="hover:text-red-600 transition-colors">
+                    n.sharma77@yahoo.com
                   </a>
                 </p>
               </div>
@@ -74,7 +72,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Hours</h3>
                 <div className="space-y-2">
                   {hours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between text-gray-600">
+                    <div key={index} className="flex justify-between gap-2 text-gray-600">
                       <span>{schedule.day}</span>
                       <span className="font-medium">{schedule.time}</span>
                     </div>
@@ -105,7 +103,7 @@ const Contact = () => {
               Make a reservation today and experience the finest Indochinese cuisine in the city.
             </p>
             <a
-              href="tel:+15551234567"
+              href="tel:+447405421830"
               className="inline-block bg-white text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200"
             >
               Call Now to Reserve
