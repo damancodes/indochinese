@@ -28,7 +28,7 @@ const indoCateringItems: MenuItem[] = [
         id: 1,
         name: "Bathure Chole",
         description: "Fluffy fried bread served with spicy chickpea curry, a classic North Indian combination.",
-        price: 12.99,
+        price: 10.50,
         image: cholebhature, // placeholder - replace with actual image
         spicy: true,
         popular: true,
@@ -38,7 +38,7 @@ const indoCateringItems: MenuItem[] = [
         id: 2,
         name: "Dal Makhni",
         description: "Rich and creamy black lentils slow-cooked with butter, cream, and aromatic spices.",
-        price: 11.99,
+        price: 10.50,
         image: dalmakhni, // placeholder - replace with actual image
         spicy: false,
         popular: true,
@@ -48,7 +48,7 @@ const indoCateringItems: MenuItem[] = [
         id: 3,
         name: "Kadhai Paneer",
         description: "Fresh cottage cheese cooked with bell peppers, onions, and tomatoes in traditional kadhai spices.",
-        price: 13.99,
+        price: 10.50,
         image: kadhaipaneer, // placeholder - replace with actual image
         spicy: true,
         popular: false,
@@ -58,7 +58,7 @@ const indoCateringItems: MenuItem[] = [
         id: 4,
         name: "Rajma Masala",
         description: "Red kidney beans cooked in rich tomato-onion gravy with traditional North Indian spices.",
-        price: 10.99,
+        price: 9.99,
         image: rajmamasala, // placeholder - replace with actual image
         spicy: true,
         popular: false,
@@ -68,7 +68,7 @@ const indoCateringItems: MenuItem[] = [
         id: 5,
         name: "Palak Paneer",
         description: "Fresh cottage cheese cubes in a creamy spinach gravy infused with aromatic spices.",
-        price: 12.99,
+        price: 10.50,
         image: palakpaneer, // placeholder - replace with actual image
         spicy: false,
         popular: true,
@@ -110,7 +110,7 @@ const IndoCatering = () => {
 
                     <div className="text-center">
                         <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                            Indo Catering
+                            Indian Catering
                         </h1>
                         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                             Authentic North Indian dishes perfect for catering events.
@@ -125,7 +125,7 @@ const IndoCatering = () => {
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                         <input
                             type="text"
-                            placeholder="Search Indo catering dishes..."
+                            placeholder="Search Indian catering dishes..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-red-500 focus:border-transparent"

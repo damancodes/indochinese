@@ -43,7 +43,7 @@ const IndoCateringSection = () => {
                         </div>
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                        Indo Catering Specialties
+                        Indian Catering Specialties
                     </h2>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                         Authentic North Indian dishes perfect for your special events and celebrations.
@@ -108,7 +108,7 @@ const IndoCateringSection = () => {
                         to="/indo-catering"
                         className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
-                        <span>View Full Indo Catering Menu</span>
+                        <span>View Full Indian Catering Menu</span>
                         <ArrowRight className="w-5 h-5" />
                     </Link>
                 </div>
