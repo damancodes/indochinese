@@ -11,6 +11,12 @@ import kadhaipaneer from "../../public/images/kadhaipaneer.png";
 import rajmamasala from "../../public/images/rajmamasala.png";
 import palakpaneer from "../../public/images/palakpaneer.png";
 import aloogobi from "../../public/images/aloogobi.png";
+import motichhor from "../../public/images/motichurladoo.png";
+import naan from "../../public/images/naan.png";
+import rice from "../../public/images/basmatirice.png";
+
+import tandooriroti from "../../public/images/tandooriroti.png";
+import gulabjamun from "../../public/images/gulabjamun.png";
 
 type MenuItem = {
   id: number;
@@ -86,6 +92,61 @@ const indoCateringItems: MenuItem[] = [
       "Traditional dry curry with potatoes and cauliflower cooked with turmeric and spices.",
     price: 9.99,
     image: aloogobi, // placeholder - replace with actual image
+    spicy: false,
+    popular: false,
+    vegetarian: true,
+  },
+
+  {
+    id: 7,
+    name: " Basmati Rice",
+    description: "Long-grain basmati rice , a simple and essential side.",
+    price: 5.0,
+    image: rice, // placeholder - replace with actual image
+    spicy: false,
+    popular: false,
+    vegetarian: true,
+  },
+  {
+    id: 8,
+    name: "Butter Naan",
+    description:
+      "Soft and fluffy Indian flatbread brushed with butter, freshly baked in a tandoor.",
+    price: 3.0,
+    image: naan, // placeholder - replace with actual image
+    spicy: false,
+    popular: true,
+    vegetarian: true,
+  },
+  {
+    id: 9,
+    name: "Tandoori Roti",
+    description:
+      "Whole wheat flatbread baked in a traditional clay oven for a smoky flavor.",
+    price: 2.5,
+    image: tandooriroti, // placeholder - replace with actual image
+    spicy: false,
+    popular: false,
+    vegetarian: true,
+  },
+  {
+    id: 10,
+    name: "Gulab Jamun",
+    description:
+      "Soft, deep-fried dough balls soaked in fragrant rose-cardamom sugar syrup.",
+    price: 4.0,
+    image: gulabjamun, // placeholder - replace with actual image
+    spicy: false,
+    popular: true,
+    vegetarian: true,
+  },
+  {
+    id: 11,
+    name: "Motichoor Laddu",
+    description:
+      "Delicate and sweet golden pearls made from gram flour, shaped into traditional laddus.",
+    price: 4.0,
+    image: motichhor, // placeholder - replace with actual image
     spicy: false,
     popular: false,
     vegetarian: true,
