@@ -6,11 +6,11 @@ const features = [
     title: "Award Winning",
     description: "Recognized for excellence in authentic Indochinese cuisine"
   },
-  {
-    icon: Clock,
-    title: "25 Years Legacy",
-    description: "Serving the community with traditional recipes since 1999"
-  },
+  // {
+  //   icon: Clock,
+  //   title: "25 Years Legacy",
+  //   description: "Serving the community with traditional recipes since 1999"
+  // },
   {
     icon: Heart,
     title: "Made with Love",

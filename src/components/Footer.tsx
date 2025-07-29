@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-xl font-bold">BYD events and catering ltd.</span>
             </div>
             <p className="text-gray-400 mb-4 leading-relaxed">
-              Serving authentic Indochinese cuisine for over 25 years. Experience the perfect
+              Serving authentic Indochinese cuisine. Experience the perfect
               fusion of flavors in every dish.
             </p>
             <div className="flex space-x-4">
