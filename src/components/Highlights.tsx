@@ -1,30 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const Highlights = () => {
   const dishes = [
     {
       name: "Hakka Noodles",
-      description: "Stir-fried noodles with fresh vegetables and aromatic spices",
-      price: "$14.99",
-      image: "https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      category: "Noodles"
+      description:
+        "Stir-fried noodles with fresh vegetables and aromatic spices",
+      price: "£6.50",
+      image:
+        "https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      category: "Noodles",
     },
     {
       name: "Chicken Manchurian",
       description: "Crispy chicken balls in tangy Indo-Chinese sauce",
-      price: "$16.99",
-      image: "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      category: "Chicken"
+      price: "£10.50",
+      image:
+        "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      category: "Chicken",
     },
-    {
-      name: "Szechuan Fried Rice",
-      description: "Spicy fried rice with Szechuan peppercorns and vegetables",
-      price: "$13.99",
-      image: "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      category: "Rice"
-    }
   ];
 
   return (
@@ -36,8 +32,8 @@ const Highlights = () => {
             Signature Dishes
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Discover our most beloved creations, each dish crafted with authentic ingredients 
-            and traditional cooking techniques.
+            Discover our most beloved creations, each dish crafted with
+            authentic ingredients and traditional cooking techniques.
           </p>
         </div>
 
@@ -58,13 +54,19 @@ const Highlights = () => {
                   {dish.category}
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-gray-900">{dish.name}</h3>
-                  <span className="text-xl font-bold text-red-600">{dish.price}</span>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {dish.name}
+                  </h3>
+                  <span className="text-xl font-bold text-red-600">
+                    {dish.price}
+                  </span>
                 </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">{dish.description}</p>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {dish.description}
+                </p>
                 {/* <button className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
                   Add to Order
                 </button> */}

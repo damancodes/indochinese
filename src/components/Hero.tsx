@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Star } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Star } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -34,7 +34,8 @@ const Hero = () => {
 
         <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
           Experience the perfect fusion of Chinese and Southeast Asian cuisine.
-          Traditional recipes passed down through generations, crafted with the finest ingredients.
+          Traditional recipes passed down through generations, crafted with the
+          finest ingredients.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -46,12 +47,12 @@ const Hero = () => {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
 
-          <a
+          {/* <a
             href="tel:+447405421830"
             className="bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-opacity-20 transition-all duration-300"
           >
             Make Reservation
-          </a>
+          </a> */}
         </div>
 
         {/* <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-white">

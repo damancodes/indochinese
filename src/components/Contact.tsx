@@ -1,10 +1,7 @@
-
-import { MapPin, Phone, Clock, Mail } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail } from "lucide-react";
 
 const Contact = () => {
-  const hours = [
-    { day: "Monday - Sunday ", time: "05:00 Pm - 11:00 PM" },
-  ];
+  const hours = [{ day: "Monday - Sunday ", time: "05:00 Pm - 11:00 PM" }];
 
   return (
     <section className="py-16 lg:py-24 bg-white">
@@ -14,8 +11,8 @@ const Contact = () => {
             Visit BYD events and catering ltd.
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Experience authentic Indochinese cuisine in our warm and welcoming atmosphere.
-            We look forward to serving you!
+            Experience authentic Indochinese cuisine in our warm and welcoming
+            atmosphere. We look forward to serving you!
           </p>
         </div>
 
@@ -27,10 +24,14 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Location</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Location
+                </h3>
                 <p className="text-gray-600">
-                  209 Shenley Road<br />
-                  Borehamwood,  WD6 1AT<br />
+                  209 Shenley Road
+                  <br />
+                  Borehamwood, WD6 1AT
+                  <br />
                   United Kingdom
                 </p>
               </div>
@@ -41,9 +42,14 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Phone
+                </h3>
                 <p className="text-gray-600">
-                  <a href="tel:+447405421830" className="hover:text-red-600 transition-colors">
+                  <a
+                    href="tel:+447405421830"
+                    className="hover:text-red-600 transition-colors"
+                  >
                     +44-7405421830
                   </a>
                 </p>
@@ -55,9 +61,14 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Email
+                </h3>
                 <p className="text-gray-600">
-                  <a href="mailto:n.sharma77@yahoo.com" className="hover:text-red-600 transition-colors">
+                  <a
+                    href="mailto:n.sharma77@yahoo.com"
+                    className="hover:text-red-600 transition-colors"
+                  >
                     n.sharma77@yahoo.com
                   </a>
                 </p>
@@ -69,10 +80,15 @@ const Contact = () => {
                 <Clock className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Hours</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  Hours
+                </h3>
                 <div className="space-y-2">
                   {hours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between gap-2 text-gray-600">
+                    <div
+                      key={index}
+                      className="flex justify-between gap-2 text-gray-600"
+                    >
                       <span>{schedule.day}</span>
                       <span className="font-medium">{schedule.time}</span>
                     </div>
@@ -88,7 +104,9 @@ const Contact = () => {
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-500 font-medium">Interactive Map</p>
-                <p className="text-sm text-gray-400">Located in the heart of Chinatown</p>
+                <p className="text-sm text-gray-400">
+                  Located in the heart of Chinatown
+                </p>
               </div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-orange-500/10 rounded-2xl"></div>
@@ -96,7 +114,7 @@ const Contact = () => {
         </div>
 
         {/* Reservation CTA */}
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <div className="bg-gradient-to-r from-red-600 to-orange-500 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Dine?</h3>
             <p className="mb-6 text-red-100">
@@ -109,7 +127,7 @@ const Contact = () => {
               Call Now to Reserve
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
