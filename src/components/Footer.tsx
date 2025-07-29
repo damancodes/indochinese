@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-orange-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">龍</span>
               </div>
-              <span className="text-xl font-bold">BYD Palace</span>
+              <span className="text-xl font-bold">BYD events and catering ltd.</span>
             </div>
             <p className="text-gray-400 mb-4 leading-relaxed">
               Serving authentic Indochinese cuisine for over 25 years. Experience the perfect
@@ -89,7 +89,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 BYD Palace Restaurant. All rights reserved. Made with ❤️ for food lovers.
+            © 2025 BYD events and catering ltd. All rights reserved. Made with ❤️ for food lovers.
           </p>
         </div>
       </div>

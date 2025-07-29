@@ -50,7 +50,7 @@ const About = () => {
             </h2>
 
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              BYD Palace has been the cornerstone of authentic Indochinese dining for over two decades.
+              BYD events and catering  has been the cornerstone of authentic Indochinese dining for over two decades.
               Our master chefs bring together the bold flavors of Chinese cuisine with the aromatic spices
               of Southeast Asia, creating a unique culinary experience that tells the story of cultural fusion.
             </p>
